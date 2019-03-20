@@ -1,4 +1,4 @@
-package prototype;
+package prototype.cloneable;
 
 
 import java.util.Arrays;
