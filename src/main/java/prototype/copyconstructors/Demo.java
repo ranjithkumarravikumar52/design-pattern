@@ -61,6 +61,9 @@ public class Demo {
 		//OR a new employee with same name as john but from Germany
 		//bad example ikr ;)
 		//anyways, the takeaway from here is, this copy-constructor approach is more powerful than cloneable interface approach
+		//CONS: however this becomes really problematic if we have say 20 or more arguments
+		//Becomes problematic to scale.
+		//Solution is to use serialization
 		Employee germanJohn = new Employee(john);
 		germanJohn.address.country = "Germany";
 
