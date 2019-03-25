@@ -7,6 +7,9 @@ import java.io.*;
  *
  * When we deserialize an object, the JVM will call private constructor to construct an object, breaking singleton pattern.
  *
+ * Solution:
+ * Fix it by providing readResolve property
+ *
  */
 class BasicSingleton implements Serializable {
 	//since we restricted creation of objects via constructor, how can we expose object creation of this class
@@ -19,6 +22,11 @@ class BasicSingleton implements Serializable {
 	//BasicSingleton basicSingleton = new BasicSingleton(); //illegal cos private access
 	private BasicSingleton() {
 
+	}
+
+	//fix serialization problems
+	protected Object readResolve(){
+		return INSTANCE;
 	}
 
 	//getter for our instance
