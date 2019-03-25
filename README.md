@@ -18,3 +18,19 @@
     * Custom Deep-copy like copy-constructors (usually painful to follow along the entire object hierarchy)
     * Take the object graph and serialize and deserialize(Serialization.roundtrip())
 * Once cloning is done, customize and use it
+
+## Singleton
+
+### Overview
+* A component which is instantiated only once
+* Hated design pattern?
+
+### Motivation
+* Sometimes it makes to have one instance in a system
+    * Database repository (If you load the database into the memory, the contents should be read without connecting to db multiple times)
+    * Object factory (Factory component which should create objects from only ONE instance)
+* Constructor call is expensive and we need to call it once and subsequently we provide clients the same(ONE) instance
+* Prevent anyone creating additional copies
+* Take care of lazy instantiation and thread safety
+    
+    
