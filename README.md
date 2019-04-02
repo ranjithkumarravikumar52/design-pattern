@@ -32,5 +32,12 @@
 * Constructor call is expensive and we need to call it once and subsequently we provide clients the same(ONE) instance
 * Prevent anyone creating additional copies
 * Take care of lazy instantiation and thread safety
+
+### Conclusion
+* Making a "safe" singleton is easy. Construct a static Lazy<T> and return its value
+* Different approaches to deal with singleton issue - Check our package structure
+* Singletons are difficult to test - however can be done by depending on an abstraction
+* For most purposes, basic singleton is enough
+
     
     
