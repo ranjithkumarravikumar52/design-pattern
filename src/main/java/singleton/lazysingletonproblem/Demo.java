@@ -25,6 +25,7 @@ class LazySingleton{
 	}*/
 
 	//double-checked locking also thread safe.
+	//We can avoid this low level overhead by following the inner static singleton approach.
 	public static LazySingleton getINSTANCE(){
 		if(INSTANCE == null){
 			synchronized (LazySingleton.class){
