@@ -17,9 +17,21 @@ class LazySingleton{
 	 * Solution is to use synchronized modifier. However this will call cause performance issues.
 	 * Other approach is double-checked locking
 	 */
-	public static LazySingleton getINSTANCE(){
+	/*public static LazySingleton getINSTANCE(){
 		if(INSTANCE == null){
 			INSTANCE = new LazySingleton();
+		}
+		return INSTANCE;
+	}*/
+
+	//double-checked locking also thread safe.
+	public static LazySingleton getINSTANCE(){
+		if(INSTANCE == null){
+			synchronized (LazySingleton.class){
+				if(INSTANCE == null){
+					INSTANCE = new LazySingleton();
+				}
+			}
 		}
 		return INSTANCE;
 	}
