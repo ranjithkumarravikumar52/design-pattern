@@ -23,13 +23,12 @@ public class Demo{
 
 	public static void main(String[] args) throws Exception{
 		String fileName = "myFile.bin";
-		EnumBasedSingleton singleton1 = EnumBasedSingleton.INSTANCE;
+		/*EnumBasedSingleton singleton1 = EnumBasedSingleton.INSTANCE;
 		singleton1.setValue(111); //name of the value is saved not the value
-		saveToFile(singleton1, fileName);
+		saveToFile(singleton1, fileName);*/
 
 		//read and check if its the same object and has same object reference
-		EnumBasedSingleton singleton2 = readFromFile(fileName);
+		EnumBasedSingleton singleton2 = readFromFile(fileName); //doesn't read the 111 value that we saved earlier.
 		System.out.println(singleton2.getValue());
-		System.out.println(singleton1 == singleton2); //true
 	}
 }
